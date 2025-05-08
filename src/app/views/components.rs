@@ -12,9 +12,13 @@ pub fn main_container() -> Markup {
 pub fn video_pane() -> Markup {
     html! {
         section .video-pane {
-            h2 { "Live Video" }
+            h2 { "Camera Preview" }
             video id="webcam" autoplay playsinline {}
-            button id="startBtn" { "Start Demo" }
+
+            div .button-group {
+                button id="startBtn" { "Start" }
+                button id="stopBtn" { "Stop" }
+            }
         }
     }
 }
@@ -22,9 +26,8 @@ pub fn video_pane() -> Markup {
 pub fn log_pane() -> Markup {
     html! {
         section.log-pane {
-            h2 { "LLM Log" }
-            ul #log hx-get="/api/log" hx-trigger="every 3s" hx-swap="beforeend" {}
-
+            h2 { "AI-Generated Procedure Log" }
+            ul #log hx-get="/api/log" hx-trigger="every 1s" hx-swap="afterbegin" {}
         }
     }
 }

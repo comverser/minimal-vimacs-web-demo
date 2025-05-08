@@ -6,6 +6,8 @@ pub fn base(content: Markup) -> Markup {
         html {
             head {
                 meta charset="utf-8";
+                meta name="viewport" content="width=device-width, initial-scale=1";
+
                 title { "VIMACS" };
 
                 link rel="stylesheet" href="/assets/style.css";
@@ -18,6 +20,11 @@ pub fn base(content: Markup) -> Markup {
                     crossorigin="anonymous" {}
             }
             body {
+                header class="brand-bar" {
+                    span class="logo" { "Dall9" }
+                    span { " × " }
+                    span class="logo" { "Linearust" }
+                }
                 (content)
             }
         }
