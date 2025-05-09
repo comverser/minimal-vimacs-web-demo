@@ -75,7 +75,7 @@ async function grabAndSend() {
         /* encode + upload */
         const blob = await canvas.convertToBlob({
             type: "image/webp",
-            quality: 0.8
+            quality: 1.0
         });
 
         await fetch("/api/frame", {

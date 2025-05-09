@@ -47,12 +47,12 @@ Hints:
 "#;
 
     let payload = json!({
-        "model": "gpt-4.1-nano",
+        "model": "gpt-4o-mini",
         "input": [{
             "role": "user",
             "content": [
                 { "type": "input_text",  "text": prompt_text },
-                { "type": "input_image", "image_url": data_url, "detail": "low" }
+                { "type": "input_image", "image_url": data_url, "detail": "high" }
             ]
         }]
     });
